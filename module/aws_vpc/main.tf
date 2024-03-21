@@ -1,8 +1,3 @@
-resource "aws_key_pair" "key" {
-  key_name   = "id_rsa"
-  public_key = file("~/.ssh/id_rsa.pub")
-}
-
 resource "aws_vpc" "test_vpc" {
   cidr_block = var.vpc_cidr
   tags = {
@@ -135,7 +130,7 @@ resource "aws_security_group" "test_sg" {
 }
 
 ################# EC-2 (public & private)#####################
-
+/*
 resource "aws_instance" "public-instance" {
   ami = var.ami_id
   instance_type = var.instance_type
@@ -148,7 +143,8 @@ resource "aws_instance" "public-instance" {
     Name = "public-instance-${count.index + 1}"
   }
 }
-
+*/
+/*
 resource "aws_instance" "private-instance" {
   ami = var.ami_id
   instance_type = var.instance_type
@@ -160,3 +156,4 @@ resource "aws_instance" "private-instance" {
     Name = "private-instance-${count.index + 1}"
   }
 }
+*/

@@ -7,14 +7,14 @@ locals {
   vpc_cidr = local.config.common.vpc.cidr
   vpc_names = local.config.common.vpc.Name
   ### SUBNET #######
-  availability_zones = local.config.common.subnet.availability_zones
-  public_subnet_cidr_blocks = local.config.common.subnet.public_cidr
-  private_subnet_cidr_blocks = local.config.common.subnet.private_cidr
-  ### SUBNET #######
-  igw = local.config.common.subnet.igw.Name
-  ### SUBNET #######
-  ami_id = local.config.common.subnet.instance.ami_id
-  instance_type = local.config.common.subnet.instance.instance_type
+  availability_zones = local.config.common.vpc.subnet.availability_zones
+  public_subnet_cidr_blocks = local.config.common.vpc.subnet.public_cidr
+  private_subnet_cidr_blocks = local.config.common.vpc.subnet.private_cidr
+  ### igw #######
+  igw = local.config.common.vpc.subnet.igw.Name
+  ### instance #######
+  ami_id = local.config.common.vpc.subnet.instance.ami_id
+  instance_type = local.config.common.vpc.subnet.instance.instance_type
 
 }
 

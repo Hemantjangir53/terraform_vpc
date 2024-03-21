@@ -10,8 +10,6 @@ module "vpc" {
     private_subnet_cidr_blocks = local.private_subnet_cidr_blocks
 
     igw = local.igw
-#create ec2-instance
-    ami_id = local.ami_id
-    instance_type = local.instance_type
 
 }
+

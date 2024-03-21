@@ -3,18 +3,18 @@ common:
     region: "us-east-1"
     cidr: "10.10.0.0/16"
     Name: "test_vpc"
-  subnet:
-    availability_zones:
-      - us-east-1a
-      - us-east-1b
-    public_cidr:
-      - "10.10.1.0/24"
-      - "10.10.3.0/24"
-    private_cidr:
-      - "10.10.2.0/24"
-      - "10.10.4.0/24"
-    igw:
-      Name: "test_igw"
-    instance:
-      ami_id: "ami-0c7217cdde317cfec"
-      instance_type: "t2.micro" 
+    subnet:
+      availability_zones:
+        - us-east-1a
+        - us-east-1b
+      public_cidr:
+        - "10.10.1.0/24"
+        - "10.10.3.0/24"
+      private_cidr:
+        - "10.10.2.0/24"
+        - "10.10.4.0/24"
+      igw:
+        Name: "test_igw"
+      instance:
+        ami_id: "ami-0c7217cdde317cfec"
+        instance_type: "t2.micro" 
