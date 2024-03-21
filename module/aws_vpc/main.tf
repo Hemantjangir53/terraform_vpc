@@ -19,7 +19,7 @@ resource "aws_subnet" "public" {
  
   }
 }
-
+/*
 resource "aws_subnet" "private" {
   vpc_id = aws_vpc.test_vpc.id
   count = length(var.private_subnet_cidr_blocks)
@@ -30,7 +30,7 @@ resource "aws_subnet" "private" {
     Name = "private-subnet-${count.index + 1}"
   }
 }
-
+*/
 #### igw  ####
 
 resource "aws_internet_gateway" "igw" {
@@ -59,7 +59,7 @@ resource "aws_route_table_association" "public" {
 }
 
 ##########  NAT gateway
-
+/*
 resource "aws_eip" "nat-eip" {
   domain = "vpc"
   count = length(var.public_subnet_cidr_blocks)
@@ -100,7 +100,7 @@ resource "aws_route_table_association" "private" {
   subnet_id = aws_subnet.private[count.index].id
   route_table_id = aws_route_table.private[count.index].id
 }
-
+*/
 ######### SG #######
 
 resource "aws_security_group" "test_sg" {

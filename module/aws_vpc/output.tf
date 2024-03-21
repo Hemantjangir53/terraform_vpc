@@ -16,7 +16,7 @@ output "public_subnets" {
 
     }
 }
-
+/*
 output "private_subnets" {
     value = {
         public_subnet_name = aws_subnet.private[*].tags["Name"]
@@ -25,3 +25,4 @@ output "private_subnets" {
 
     }
 }
+*/
