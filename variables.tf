@@ -18,13 +18,6 @@ locals {
 
 }
 
-
-variable "subnet_id" {
-  description = "The subnet ID where the EC2 instance will be launched"
-  # Define any necessary validation rules
-}
-
-
 /*
 variable "subnet_id" {
   description = "The subnet ID where the EC2 instance will be launched"

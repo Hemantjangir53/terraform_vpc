@@ -24,8 +24,8 @@ variable "private_subnet_cidr_blocks" {
   description = "List of private subnet CIDR blocks"
   type = list(any)
   #default = ["10.10.2.0/24", "10.10.4.0/24"]
-  
 }
+
 #### igw  ######
 
 variable "igw" {

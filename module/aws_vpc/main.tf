@@ -19,7 +19,8 @@ resource "aws_subnet" "public" {
  
   }
 }
-/*
+
+
 resource "aws_subnet" "private" {
   vpc_id = aws_vpc.test_vpc.id
   count = length(var.private_subnet_cidr_blocks)
@@ -30,7 +31,7 @@ resource "aws_subnet" "private" {
     Name = "private-subnet-${count.index + 1}"
   }
 }
-*/
+
 #### igw  ####
 
 resource "aws_internet_gateway" "igw" {

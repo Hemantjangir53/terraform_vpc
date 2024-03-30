@@ -3,7 +3,7 @@ output "vpc_id" {
     value = aws_vpc.test_vpc.id
   
 }
-output "my_vpc_name" {           # "my_vpc_name"  --> root module (outputs.tf)
+output "my_vpc_name" {           # "my_vpc_name"  ---> root module (outputs.tf)
     description = "VPC NAME"
     value = aws_vpc.test_vpc.tags["Name"]       
 }
@@ -16,7 +16,6 @@ output "public_subnets" {
 
     }
 }
-/*
 output "private_subnets" {
     value = {
         public_subnet_name = aws_subnet.private[*].tags["Name"]
@@ -25,4 +24,9 @@ output "private_subnets" {
 
     }
 }
-*/
+
+
+output "security_group_ids" {
+  value = aws_security_group.test_sg.id
+}
+
