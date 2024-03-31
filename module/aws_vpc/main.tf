@@ -13,7 +13,7 @@ resource "aws_subnet" "public" {
 
   cidr_block = var.public_subnet_cidr_blocks[count.index]
   availability_zone = var.availability_zones[count.index]
-  map_public_ip_on_launch = true
+  #map_public_ip_on_launch = true
   tags = {
     Name = "public-subnet-${count.index + 1}"
  
@@ -27,6 +27,8 @@ resource "aws_subnet" "private" {
 
   cidr_block = var.private_subnet_cidr_blocks[count.index]
   availability_zone = var.availability_zones[count.index]
+  #map_public_ip_on_launch = true
+
   tags = {
     Name = "private-subnet-${count.index + 1}"
   }
@@ -60,7 +62,7 @@ resource "aws_route_table_association" "public" {
 }
 
 ##########  NAT gateway
-/*
+
 resource "aws_eip" "nat-eip" {
   domain = "vpc"
   count = length(var.public_subnet_cidr_blocks)
@@ -101,7 +103,7 @@ resource "aws_route_table_association" "private" {
   subnet_id = aws_subnet.private[count.index].id
   route_table_id = aws_route_table.private[count.index].id
 }
-*/
+
 ######### SG #######
 
 resource "aws_security_group" "test_sg" {

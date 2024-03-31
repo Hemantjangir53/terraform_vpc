@@ -9,13 +9,13 @@ variable "instance_type" {
 
 variable "subnet_id" {
   description = "Subnet ID where the EC2 instance will be launched"
-  type        = string
+    type        = string
+  }
 
-  }/*
 variable "private_subnet_id" {
   description = "Subnet ID for the private instance"
   type        = string
-}*/
+}
 variable "vpc_id" {}
 
 variable "security_group_id" {}
