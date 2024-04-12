@@ -16,7 +16,6 @@ resource "aws_subnet" "public" {
   #map_public_ip_on_launch = true
   tags = {
     Name = "public-subnet-${count.index + 1}"
- 
   }
 }
 
@@ -131,32 +130,3 @@ resource "aws_security_group" "test_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
-################# EC-2 (public & private)#####################
-/*
-resource "aws_instance" "public-instance" {
-  ami = var.ami_id
-  instance_type = var.instance_type
-  key_name = aws_key_pair.key.key_name
-  vpc_security_group_ids = [aws_security_group.test_sg.id]
-  count = length(var.public_subnet_cidr_blocks)
-  subnet_id = aws_subnet.public[count.index].id
-
-  tags = {
-    Name = "public-instance-${count.index + 1}"
-  }
-}
-*/
-/*
-resource "aws_instance" "private-instance" {
-  ami = var.ami_id
-  instance_type = var.instance_type
-  key_name = aws_key_pair.key.key_name
-  vpc_security_group_ids = [aws_security_group.test_sg.id]
-  count = length(var.private_subnet_cidr_blocks)
-  subnet_id = aws_subnet.private[count.index].id
-  tags = {
-    Name = "private-instance-${count.index + 1}"
-  }
-}
-*/

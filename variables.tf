@@ -13,9 +13,11 @@ locals {
   ### igw #######
   igw = local.config.common.vpc.subnet.igw.Name
   ### instance #######
-  ami_id = local.config.common.vpc.subnet.instance.ami_id
-  instance_type = local.config.common.vpc.subnet.instance.instance_type
-
+  ami_id = local.config.common.ec2_instances[*].ami
+  instance_type = local.config.common.ec2_instances[*].instance_type
+  #key_name = local.config.common.ec2_instances[*].key_pair_name
+  instance_names = local.config.common.ec2_instances[*].name
+                                      
 }
 
 /*
